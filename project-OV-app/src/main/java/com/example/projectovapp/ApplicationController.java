@@ -21,6 +21,7 @@ public class ApplicationController {
 
     private Label welcomeText;
 
+    //open.fxml
     @FXML
     public void onRoutePlannerButtonClick(ActionEvent event) throws IOException
     {
@@ -31,6 +32,7 @@ public class ApplicationController {
         stage.show();
     }
 
+    //route.fxml
     @FXML
     public void onRouteInfoButtonClick(ActionEvent event) throws IOException
     {

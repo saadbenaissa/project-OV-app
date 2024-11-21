@@ -3,21 +3,23 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.control.ComboBox?>
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectovapp.ApplicationController">
   <padding>
 
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
-   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-         <Image url="@/image0.jpg" />
-      </image>
-   </ImageView>
+    <Label text="Begin" />
+    <ComboBox>
 
-  <Label text="Welkom bij OVerzichtelijk!"/>
-  <Button onAction="#onRoutePlannerButtonClick" text="Plan reis" />
+    </ComboBox>
+    <Label text="Eind" />
+    <ComboBox>
+
+    </ComboBox>
+  <Label text="ROUTE" />
+  <Button onAction="#onRoutePlannerButtonClick" text="Zoek" />
 </VBox>

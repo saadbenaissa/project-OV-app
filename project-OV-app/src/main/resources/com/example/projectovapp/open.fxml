@@ -18,6 +18,6 @@
       </image>
    </ImageView>
 
-  <Label fx:id="welcomeText" />
-  <Button onAction="#onHelloButtonClick" text="Hello!" />
+  <Label text="Welkom bij OVerzichtelijk!"/>
+  <Button onAction="#onRoutePlannerButtonClick" text="Plan reis" />
 </VBox>

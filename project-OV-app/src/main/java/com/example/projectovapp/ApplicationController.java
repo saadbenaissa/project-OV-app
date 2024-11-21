@@ -21,6 +21,7 @@ public class ApplicationController {
 
     private Label welcomeText;
 
+    //open.fxml
     @FXML
     public void onRoutePlannerButtonClick(ActionEvent event) throws IOException
     {
@@ -28,6 +29,17 @@ public class ApplicationController {
         Stage stage = new Stage();
         stage.setScene(new Scene(loader.load()));
         stage.setTitle("route planner");
+        stage.show();
+    }
+
+    //route.fxml
+    @FXML
+    public void onRouteInfoButtonClick(ActionEvent event) throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("routeinfo.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(loader.load()));
+        stage.setTitle("Route Informatie");
         stage.show();
     }
 }

@@ -30,4 +30,14 @@ public class ApplicationController {
         stage.setTitle("route planner");
         stage.show();
     }
+
+    @FXML
+    public void onRouteInfoButtonClick(ActionEvent event) throws IOException
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("routeinfo.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(loader.load()));
+        stage.setTitle("Route Informatie");
+        stage.show();
+    }
 }

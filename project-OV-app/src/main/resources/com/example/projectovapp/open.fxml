@@ -17,7 +17,6 @@
          <Image url="@/image0.jpg" />
       </image>
    </ImageView>
-
-  <Label text="Welkom bij OVerzichtelijk!"/>
+  <Label fx:id="testText" text="Welkom bij OVerzichtelijk!"/>
   <Button onAction="#onRoutePlannerButtonClick" text="Plan reis" />
 </VBox>

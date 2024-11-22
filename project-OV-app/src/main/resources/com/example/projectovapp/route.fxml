@@ -20,6 +20,6 @@
     <ComboBox>
 
     </ComboBox>
-  <Label text="ROUTE" />
+  <Label fx:id="testText" text="ROUTE" />
   <Button onAction="#onRouteInfoButtonClick" text="Zoek" />
 </VBox>

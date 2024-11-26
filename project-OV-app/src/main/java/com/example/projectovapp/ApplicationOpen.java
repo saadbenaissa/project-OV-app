@@ -20,7 +20,7 @@ public class ApplicationOpen extends Application {
 
         // Laad 'route.fxml'
         FXMLLoader loader2 = new FXMLLoader(ApplicationOpen.class.getResource("route.fxml"));
-        scene2 = new Scene(loader2.load(), 320, 240);
+        scene2 = new Scene(loader2.load(), 1920, 1080);
 
 //        // Laad 'routeinfo.fxml'
 //        FXMLLoader loader3 = new FXMLLoader(ApplicationOpen.class.getResource("routeinfo.fxml"));

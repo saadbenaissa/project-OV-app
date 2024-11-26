@@ -20,13 +20,13 @@
 
     <Button onAction="#onRoutePlannerButtonClick" style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-border-width: 5px; -fx-border-color: black; " text="Plan uw reis" />
 
-    <ImageView fitHeight="45.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="45.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true" translateX="450.0" translateY="65.0">
         <image>
             <Image url="@/Flag_of_the_Netherlands.svg.png" />
         </image>
     </ImageView>
 
-    <ImageView fitHeight="45.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="45.0" fitWidth="226.0" layoutX="600.0" pickOnBounds="true" preserveRatio="true" translateX="550.0">
         <image>
             <Image url="@/OIP.jpeg" />
         </image>

@@ -8,3 +8,6 @@ Vervolgens worden de juiste libraries geimporteerd en zou hiermee het project we
 
 # openJDK 23
 Maak gebruik van openJDK 23.0.1
+
+![image](https://github.com/user-attachments/assets/9f482d4d-43b5-4cec-8712-6aa58888b47c)
+

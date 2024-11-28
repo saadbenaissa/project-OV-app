@@ -11,15 +11,22 @@ public class ApplicationOpen extends Application {
 
     public static Scene scene1, scene2, scene3;
 
+
     @Override
     public void start(Stage stage) throws IOException {
+        // Laad 'open.fxml'
         FXMLLoader fxmlLoader = new FXMLLoader(ApplicationOpen.class.getResource("open.fxml"));
-        scene1 = new Scene(fxmlLoader.load(), 320, 240);
-        scene2 = new Scene(fxmlLoader.load(ApplicationOpen.class.getResource("route.fxml")), 320, 240);
-        scene3 = new Scene(fxmlLoader.load(ApplicationOpen.class.getResource("routeinfo.fxml")), 320, 240);
+        scene1 = new Scene(fxmlLoader.load());
 
+        // Laad 'route.fxml'
+        FXMLLoader loader2 = new FXMLLoader(ApplicationOpen.class.getResource("route.fxml"));
+        scene2 = new Scene(loader2.load(), 1920, 1080);
 
-        stage.setTitle("Hello!");
+//        // Laad 'routeinfo.fxml'
+//        FXMLLoader loader3 = new FXMLLoader(ApplicationOpen.class.getResource("routeinfo.fxml"));
+//        scene3 = new Scene(loader3.load(), 320, 240);
+
+        stage.setTitle("OVerzichtelijk");
         stage.setScene(scene1);
         stage.show();
     }

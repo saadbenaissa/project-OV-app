@@ -6,5 +6,5 @@ Om dit op te lossen moet je, nadat het project is opgehaald, op "pom.xml" klikke
 Vervolgens worden de juiste libraries geimporteerd en zou hiermee het project weer moeten werken.
 
 
-# JavafxSDK 23
-https://www.azul.com/downloads/?architecture=x86-64-bit&package=jdk-fx#zulu
+# openJDK 23
+Maak gebruik van openJDK 23.0.1

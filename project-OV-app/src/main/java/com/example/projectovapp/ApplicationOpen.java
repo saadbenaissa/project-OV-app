@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class ApplicationOpen extends Application {
 
-    public static Scene scene1, scene2, scene3, registrationScene;
+    public static Scene scene1, scene2, scene3;
 
 
     @Override
@@ -25,10 +25,6 @@ public class ApplicationOpen extends Application {
         // Laad 'routeinfo.fxml'
         FXMLLoader loader3 = new FXMLLoader(ApplicationOpen.class.getResource("routeinfo.fxml"));
         scene3 = new Scene(loader3.load(), 320, 240);
-
-        // Laad 'registration.fxml' voor de registratiepagina
-        FXMLLoader registrationLoader = new FXMLLoader(ApplicationOpen.class.getResource("registration.fxml"));
-        registrationScene = new Scene(registrationLoader.load(), 1920, 1080);
 
         stage.setTitle("OVerzichtelijk");
         stage.setScene(scene1);
@@ -46,10 +42,6 @@ public class ApplicationOpen extends Application {
         stage.setFullScreen(true);
     }
 
-    public static void ChangeToRegistrationPage(Stage stage) {
-        stage.setScene(registrationScene);
-        stage.setFullScreen(true);
-    }
     public static void main(String[] args) {
         launch();
     }

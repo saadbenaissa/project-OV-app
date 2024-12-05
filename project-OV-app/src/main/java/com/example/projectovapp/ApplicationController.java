@@ -24,22 +24,31 @@ public class ApplicationController {
 
     //open.fxml
     @FXML
-    public void onRoutePlannerButtonClick(ActionEvent event) throws IOException {
+    public void onRoutePlannerButtonClick(ActionEvent event) throws IOException
+    {
         testText.setText("Welcome to JavaFX Application!");
-        ApplicationOpen.ChangeScene((Stage) testText.getScene().getWindow());
+        ApplicationOpen.ChangeScene((Stage)testText.getScene().getWindow());
+        /*FXMLLoader loader = new FXMLLoader(getClass().getResource("route.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(loader.load()));
+        stage.setTitle("route planner");
+        stage.show();
+
+         */
     }
 
     //route.fxml
     @FXML
-    public void onRouteInfoButtonClick(ActionEvent event) throws IOException {
+    public void onRouteInfoButtonClick(ActionEvent event) throws IOException
+    {
         testText.setText("Welcome to JavaFX Application!");
-        ApplicationOpen.ChangeScene2((Stage) testText.getScene().getWindow());
-    }
+        ApplicationOpen.ChangeScene2((Stage)testText.getScene().getWindow());
+        /*FXMLLoader loader = new FXMLLoader(getClass().getResource("routeinfo.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(loader.load()));
+        stage.setTitle("Route Informatie");
+        stage.show();
 
-    // Registatie knop
-    @FXML
-    public void onRegisterButtonClick(ActionEvent event) throws IOException {
-        // Verander naar de registratiepagina
-        ApplicationOpen.ChangeToRegistrationPage((Stage)testText.getScene().getWindow());
+         */
     }
 }

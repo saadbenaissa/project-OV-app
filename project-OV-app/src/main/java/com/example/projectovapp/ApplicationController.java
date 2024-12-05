@@ -38,7 +38,7 @@ public class ApplicationController {
 
     // Registatie knop
     @FXML
-    public void onRegistrationButtonClick(ActionEvent event) throws IOException {
+    public void onRegisterButtonClick(ActionEvent event) throws IOException {
         // Verander naar de registratiepagina
         ApplicationOpen.ChangeToRegistrationPage((Stage)testText.getScene().getWindow());
     }

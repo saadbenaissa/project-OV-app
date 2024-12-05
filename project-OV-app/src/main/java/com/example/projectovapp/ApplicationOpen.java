@@ -28,7 +28,7 @@ public class ApplicationOpen extends Application {
 
         // Laad 'registration.fxml' voor de registratiepagina
         FXMLLoader registrationLoader = new FXMLLoader(ApplicationOpen.class.getResource("registration.fxml"));
-        registrationScene = new Scene(registrationLoader.load(), 600, 400);
+        registrationScene = new Scene(registrationLoader.load(), 1920, 1080);
 
         stage.setTitle("OVerzichtelijk");
         stage.setScene(scene1);
@@ -48,7 +48,7 @@ public class ApplicationOpen extends Application {
 
     public static void ChangeToRegistrationPage(Stage stage) {
         stage.setScene(registrationScene);
-        stage.setFullScreen(false);
+        stage.setFullScreen(true);
     }
     public static void main(String[] args) {
         launch();

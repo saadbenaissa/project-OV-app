@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="1197.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectovapp.ApplicationController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+
+  <!-- Main Title -->
+  <Label fx:id="testText" alignment="CENTER" prefHeight="60.0" prefWidth="301.0" text="Route informatie" textAlignment="CENTER">
+    <font>
+      <Font name="Arial" size="34.0" />
+    </font>
+  </Label>
+
+  <!-- Begin Station Section -->
+  <VBox alignment="CENTER" spacing="10.0">
+    <Label text="Begin Station:" textAlignment="LEFT">
+      <font>
+        <Font name="System Bold" size="28.0" />
+      </font>
+    </Label>
+    <Label fx:id="beginStationLabel" text="Station Amsterdam Centraal" textAlignment="LEFT">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Label>
+  </VBox>
+
+  <!-- End Station Section -->
+  <VBox alignment="CENTER" spacing="10.0">
+    <Label text="Eind Station:" textAlignment="LEFT">
+      <font>
+        <Font name="System Bold" size="28.0" />
+      </font>
+    </Label>
+    <Label fx:id="endStationLabel" text="Station Utrecht Centraal" textAlignment="LEFT">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Label>
+  </VBox>
+
+  <!-- Back Button -->
+  <Button onAction="#onRouteInfoButtonClick" text="Terug" />
+</VBox>

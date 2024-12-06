@@ -42,4 +42,15 @@ public class ApplicationController {
         // Verander naar de registratiepagina
         ApplicationOpen.ChangeToRegistrationPage((Stage)testText.getScene().getWindow());
     }
+
+    @FXML
+    private Label beginStationLabel;
+
+    @FXML
+    private Label endStationLabel;
+
+    public void initialize() {
+        beginStationLabel.setText("Amsterdam Centraal");
+        endStationLabel.setText("Utrecht Centraal");
+    }
 }

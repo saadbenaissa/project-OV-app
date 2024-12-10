@@ -29,19 +29,19 @@ public class RegisterController {
     private TextField passwordField;
 
     @FXML
-    private Label statusLabel; // tekst boven aan (bvb registratie gelukt)
+    private Label statusLabel; // tekst boven aan (bijv. registratie gelukt)
 
     @FXML
-    private Button registerButton; //registreeg knop
+    private Button registerButton; //registreer knop
 
     @FXML
     private Button backButton;  // Terug knop
 
-    // REristratie
+    // Registratie
     @FXML
     private void onRegistrationButtonClick() {
         String fullname = fullnameField.getText();
-        String mail = mailField.getText();
+        String mail     = mailField.getText();
         String username = usernameField.getText();
         String password = passwordField.getText();
 

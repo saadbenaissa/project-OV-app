@@ -42,4 +42,7 @@ public class ApplicationController {
         // Verander naar de registratiepagina
         ApplicationOpen.ChangeToRegistrationPage((Stage)testText.getScene().getWindow());
     }
+
+
+
 }

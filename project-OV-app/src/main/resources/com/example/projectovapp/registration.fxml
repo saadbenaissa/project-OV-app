@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="527.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectovapp.RegisterController">
+
+    <ImageView fitHeight="154.0" fitWidth="332.0" pickOnBounds="true" preserveRatio="true" translateY="43.0">
+        <image>
+            <Image url="@/logo.png" />
+        </image>
+    </ImageView>
+
+    <TextField fx:id="fullnameField" layoutX="476.0" layoutY="170.0" maxHeight="142.0" maxWidth="532.0" minHeight="30.0" prefHeight="78.0" prefWidth="532.0" promptText="Volledige naam" style="-fx-font-size: 16px; -fx-font-weight: bold;" AnchorPane.leftAnchor="476.0" AnchorPane.topAnchor="170.0" />
+
+    <TextField fx:id="usernameField" layoutX="475.0" layoutY="293.0" maxHeight="142.0" maxWidth="532.0" minHeight="30.0" prefHeight="78.0" prefWidth="532.0" promptText="Username" style="-fx-font-size: 16px; -fx-font-weight: bold;" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="293.0" />
+
+    <Label fx:id="statusLabel" translateX="255.0" translateY="-130.0" AnchorPane.leftAnchor="227.0" AnchorPane.topAnchor="200.0">
+        <font>
+            <Font name="System Bold" size="53.0" />
+        </font></Label>
+
+    <TextField fx:id="mailField" layoutX="475.0" layoutY="414.0" maxHeight="142.0" maxWidth="532.0" minHeight="30.0" prefHeight="78.0" prefWidth="532.0" promptText="Email-adress" style="-fx-font-size: 16px; -fx-font-weight: bold;" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="414.0" />
+
+
+    <PasswordField fx:id="passwordField" layoutX="476.0" layoutY="533.0" maxHeight="142.0" maxWidth="532.0" minHeight="30.0" prefHeight="78.0" prefWidth="532.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Wachtwoord" />
+
+    <!-- Registreer button rechts onder -->
+    <Button fx:id="registerButton" alignment="CENTER" onAction="#onRegistrationButtonClick" prefHeight="63.0" prefWidth="161.0" text="Registreer" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+        <font>
+            <Font name="System Bold Italic" size="25.0" />
+        </font></Button>
+
+    <!-- Terug button links onder -->
+    <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="63.0" prefWidth="161.0" text="Terug" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+        <font>
+            <Font name="System Bold Italic" size="25.0" />
+        </font></Button>
+
+    <!-- ChoiceBox in het midden -->
+    <ChoiceBox layoutX="476.0" layoutY="658.0" maxHeight="142.0" maxWidth="532.0" minHeight="30.0" prefHeight="78.0" prefWidth="532.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" AnchorPane.leftAnchor="476.0" AnchorPane.topAnchor="658.0" />
+
+
+
+
+</AnchorPane>

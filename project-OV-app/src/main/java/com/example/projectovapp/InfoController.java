@@ -1,6 +1,7 @@
 package com.example.projectovapp;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -31,21 +32,31 @@ public class InfoController {
     }
 
     @FXML
-    // Als je op de terugknop klikt ga je naar open.fxml
-
+    // Als je op de terugknop klikt ga je naar open.fxml, oftewel de hoofdpagina.
+    // Met een try catch vangt het eventuele errors op en behandelt deze.
     private void onBackButtonClick() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/projectovapp/open.fxml"));
             Parent root = loader.load();
 
+            // Set the new scene
             Stage stage = (Stage) backButton.getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
+            stage.setScene(new Scene(root));
             stage.show();
 
-            // Vangt fouten op om te voorkomen dat de applicatie crasht
+            //Als er een error ontstaat kun je een aangepaste melding weergeven aan de gebruiker.
         } catch (IOException e) {
             e.printStackTrace();
+            showErrorDialog("An error occurred while loading the page. Please try again.");
         }
+    }
+
+    // Dialog box initialiseren die later wordt gebruikt om errors weer te geven, mochten deze plaatsvinden.
+    private void showErrorDialog(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

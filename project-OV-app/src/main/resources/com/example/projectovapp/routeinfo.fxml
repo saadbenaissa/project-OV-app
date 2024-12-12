@@ -46,5 +46,5 @@
   </VBox>
 
   <!-- Back Button -->
-  <Button onAction="#onBackButtonClick" text="Terug" />
+  <Button fx:id="backButton" onAction="#onBackButtonClick" text="Terug" />
 </VBox>

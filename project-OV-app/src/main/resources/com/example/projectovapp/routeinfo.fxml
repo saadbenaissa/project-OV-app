@@ -18,10 +18,9 @@
     </font>
   </Label>
 
-  <!-- Content Section -->
-  <HBox alignment="CENTER_LEFT" prefHeight="540.0" prefWidth="1197.0" spacing="20.0">
+  <HBox alignment="CENTER" prefHeight="540.0" prefWidth="1197.0">
     <!-- Left Section: VBox -->
-    <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="600.0" spacing="20.0">
+    <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="600.0" spacing="20.0" HBox.hgrow="ALWAYS">
       <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
       </padding>
@@ -53,15 +52,13 @@
           </font>
         </Label>
       </VBox>
-
-
     </VBox>
 
     <!-- Divider Line -->
-    <Separator orientation="VERTICAL" />
+    <Separator orientation="VERTICAL" HBox.hgrow="NEVER" />
 
-    <!-- Right Section: Image -->
-    <VBox alignment="CENTER" prefWidth="577.0" prefHeight="600.0" spacing="20.0">
+    <!-- Right Section: VBox -->
+    <VBox alignment="CENTER" prefHeight="600.0" prefWidth="600.0" spacing="20.0" HBox.hgrow="ALWAYS">
       <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
       </padding>
@@ -72,6 +69,7 @@
       </ImageView>
     </VBox>
   </HBox>
+
   <!-- Back Button -->
   <Button fx:id="backButton" onAction="#onBackButtonClick" text="Terug" />
 </VBox>

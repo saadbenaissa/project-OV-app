@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -17,34 +18,60 @@
     </font>
   </Label>
 
-  <!-- Begin Station Section -->
-  <VBox alignment="CENTER" spacing="10.0">
-    <Label text="Begin Station:" textAlignment="LEFT">
-      <font>
-        <Font name="System Bold" size="28.0" />
-      </font>
-    </Label>
-    <Label fx:id="beginStationLabel" text="Station Amsterdam Centraal" textAlignment="LEFT">
-      <font>
-        <Font size="16.0" />
-      </font>
-    </Label>
-  </VBox>
+  <!-- Content Section -->
+  <HBox alignment="CENTER_LEFT" prefHeight="540.0" prefWidth="1197.0" spacing="20.0">
+    <!-- Left Section: VBox -->
+    <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="600.0" spacing="20.0">
+      <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
 
-  <!-- End Station Section -->
-  <VBox alignment="CENTER" spacing="10.0">
-    <Label text="Eind Station:" textAlignment="LEFT">
-      <font>
-        <Font name="System Bold" size="28.0" />
-      </font>
-    </Label>
-    <Label fx:id="endStationLabel" text="Station Utrecht Centraal" textAlignment="LEFT">
-      <font>
-        <Font size="16.0" />
-      </font>
-    </Label>
-  </VBox>
+      <!-- Begin Station Section -->
+      <VBox alignment="CENTER" spacing="10.0">
+        <Label text="Begin Station:" textAlignment="LEFT">
+          <font>
+            <Font name="System Bold" size="28.0" />
+          </font>
+        </Label>
+        <Label fx:id="beginStationLabel" text="Station Amsterdam Centraal" textAlignment="LEFT">
+          <font>
+            <Font size="16.0" />
+          </font>
+        </Label>
+      </VBox>
 
+      <!-- End Station Section -->
+      <VBox alignment="CENTER" spacing="10.0">
+        <Label text="Eind Station:" textAlignment="LEFT">
+          <font>
+            <Font name="System Bold" size="28.0" />
+          </font>
+        </Label>
+        <Label fx:id="endStationLabel" text="Station Utrecht Centraal" textAlignment="LEFT">
+          <font>
+            <Font size="16.0" />
+          </font>
+        </Label>
+      </VBox>
+
+
+    </VBox>
+
+    <!-- Divider Line -->
+    <Separator orientation="VERTICAL" />
+
+    <!-- Right Section: Image -->
+    <VBox alignment="CENTER" prefWidth="577.0" prefHeight="600.0" spacing="20.0">
+      <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
+      <ImageView fx:id="routeImage" fitHeight="400.0" fitWidth="400.0" preserveRatio="true">
+        <image>
+          <Image url="@/AMS-UTR.jpg" />
+        </image>
+      </ImageView>
+    </VBox>
+  </HBox>
   <!-- Back Button -->
   <Button fx:id="backButton" onAction="#onBackButtonClick" text="Terug" />
 </VBox>

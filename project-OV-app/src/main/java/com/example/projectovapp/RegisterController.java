@@ -17,36 +17,44 @@ import java.io.IOException;
 public class RegisterController {
 
     @FXML
+    private TextField mailField;
+
+    @FXML
+    private TextField fullnameField;
+
+    @FXML
     private TextField usernameField;
 
     @FXML
     private TextField passwordField;
 
     @FXML
-    private Label statusLabel;
+    private Label statusLabel; // tekst boven aan (bijv. registratie gelukt)
 
     @FXML
-    private Button registerButton;
+    private Button registerButton; //registreer knop
 
     @FXML
     private Button backButton;  // Terug knop
 
-    // REristratie
+    // Registratie
     @FXML
     private void onRegistrationButtonClick() {
+        String fullname = fullnameField.getText();
+        String mail     = mailField.getText();
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        if (username.isEmpty() || password.isEmpty()) {
+        if (fullname.isEmpty() || mail.isEmpty() || username.isEmpty() || password.isEmpty()) {
             statusLabel.setText("Vul alle velden in.");
         } else {
             statusLabel.setText("Registratie succesvol!");
-            saveRegistrationData(username, password);
+            saveRegistrationData(fullname, mail, username, password);
         }
     }
 
     // Methode die de gebruikersnaam en het wachtwoord opslaat in LocalOpslag.txt
-    private void saveRegistrationData(String username, String password) {
+    private void saveRegistrationData(String fullname, String mail, String username, String password) {
         File file = new File("data/LocalOpslag.txt");
 
         try {
@@ -55,8 +63,15 @@ public class RegisterController {
             }
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
-            writer.write("Gebruikersnaam: " + username + ", Wachtwoord: " + password);
 
+            writer.newLine();
+            writer.write("Volledige naam: " + fullname);
+            writer.newLine();
+            writer.write("E-mail: " + mail);
+            writer.newLine();
+            writer.write("Gebruikersnaam: " + username);
+            writer.newLine();
+            writer.write("Wachtwoord: " + password);
             writer.newLine();
             writer.close();
 

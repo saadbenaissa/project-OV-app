@@ -36,6 +36,13 @@ public class ApplicationController {
         ApplicationOpen.ChangeScene2((Stage) testText.getScene().getWindow());
     }
 
+    // Login knop
+    @FXML
+    public void onLoginButtonClick(ActionEvent event) throws IOException {
+        // Verander naar de registratiepagina
+        ApplicationOpen.ChangeToLoginPage((Stage)testText.getScene().getWindow());
+    }
+
     // Registatie knop
     @FXML
     public void onRegisterButtonClick(ActionEvent event) throws IOException {
@@ -43,6 +50,15 @@ public class ApplicationController {
         ApplicationOpen.ChangeToRegistrationPage((Stage)testText.getScene().getWindow());
     }
 
+    @FXML
+    private Label beginStationLabel;
 
+    @FXML
+    private Label endStationLabel;
+
+    public void initialize() {
+        beginStationLabel.setText("Amsterdam Centraal");
+        endStationLabel.setText("Utrecht Centraal");
+    }
 
 }

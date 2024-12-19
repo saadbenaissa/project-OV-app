@@ -31,6 +31,8 @@
             <Image url="@/OIP.jpeg" />
         </image>
     </ImageView>
+    <!-- Toegevoegde Login knop -->
+    <Button onAction="#onLoginButtonClick" prefHeight="56.0" prefWidth="198.0" style="-fx-font-size: 25px; -fx-font-weight: bold; -fx-border-width: 3px; -fx-border-color: black;" text="Log in" translateY="20.0" />
 
     <!-- Toegevoegde Register knop -->
     <Button onAction="#onRegisterButtonClick" prefHeight="56.0" prefWidth="198.0" style="-fx-font-size: 25px; -fx-font-weight: bold; -fx-border-width: 3px; -fx-border-color: black;" text="Registreer" translateY="20.0" />

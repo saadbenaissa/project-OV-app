@@ -36,6 +36,7 @@ public class ApplicationController {
         ApplicationOpen.ChangeScene2((Stage) testText.getScene().getWindow());
     }
 
+
     // Login knop
     @FXML
     public void onLoginButtonClick(ActionEvent event) throws IOException {
@@ -43,11 +44,10 @@ public class ApplicationController {
         ApplicationOpen.ChangeToLoginPage((Stage)testText.getScene().getWindow());
     }
 
-    // Registratie knop
+    // Registatie knop
     @FXML
     public void onRegisterButtonClick(ActionEvent event) throws IOException {
         // Verander naar de registratiepagina
         ApplicationOpen.ChangeToRegistrationPage((Stage)testText.getScene().getWindow());
     }
-
 }

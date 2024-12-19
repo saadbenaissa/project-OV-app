@@ -43,22 +43,11 @@ public class ApplicationController {
         ApplicationOpen.ChangeToLoginPage((Stage)testText.getScene().getWindow());
     }
 
-    // Registatie knop
+    // Registratie knop
     @FXML
     public void onRegisterButtonClick(ActionEvent event) throws IOException {
         // Verander naar de registratiepagina
         ApplicationOpen.ChangeToRegistrationPage((Stage)testText.getScene().getWindow());
-    }
-
-    @FXML
-    private Label beginStationLabel;
-
-    @FXML
-    private Label endStationLabel;
-
-    public void initialize() {
-        beginStationLabel.setText("Amsterdam Centraal");
-        endStationLabel.setText("Utrecht Centraal");
     }
 
 }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="527.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectovapp.LoginController">
+
+    <ImageView fitHeight="154.0" fitWidth="332.0" pickOnBounds="true" preserveRatio="true" translateY="43.0">
+        <image>
+            <Image url="@/logo.png" />
+        </image>
+    </ImageView>
+
+    <Label layoutX="475.0" layoutY="100.0" text="Inloggen">
+        <font>
+            <Font name="System Bold" size="53.0"/>
+        </font>
+    </Label>
+
+    <TextField fx:id="usernameField" layoutX="475.0" layoutY="200.0" maxHeight="142.0" maxWidth="532.0" minHeight="30.0" prefHeight="78.0" prefWidth="532.0" promptText="Gebruikersnaam" style="-fx-font-size: 18px; -fx-font-weight: bold;" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="300.0"/>
+
+    <PasswordField fx:id="passwordField" layoutX="475.0" layoutY="450.0" maxHeight="142.0" maxWidth="532.0" minHeight="30.0" prefHeight="78.0" prefWidth="532.0" promptText="Wachtwoord" style="-fx-font-size: 18px; -fx-font-weight: bold;" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="450.0"/>
+
+    <!-- Login button rechts onder -->
+    <Button fx:id="loginButton" alignment="CENTER" onAction="#onLoginButtonClick" prefHeight="63.0" prefWidth="161.0" text="Login" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+        <font>
+            <Font name="System Bold Italic" size="25.0"/>
+        </font>
+    </Button>
+
+    <!-- Terug button links onder -->
+    <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="63.0" prefWidth="161.0" text="Terug" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+        <font>
+            <Font name="System Bold Italic" size="25.0"/>
+        </font>
+    </Button>
+
+    <Label fx:id="statusLabel" layoutX="475.0" layoutY="600.0" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+</AnchorPane>

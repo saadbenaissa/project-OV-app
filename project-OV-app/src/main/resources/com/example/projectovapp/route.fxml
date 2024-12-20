@@ -5,21 +5,20 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.ComboBox?>
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectovapp.ApplicationController">
-  <padding>
+<?import javafx.collections.FXCollections?>
 
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-  </padding>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectovapp.PlannerController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
     <Label text="Begin" />
-    <ComboBox>
+    <ComboBox fx:id="beginComboBox" />
 
-    </ComboBox>
     <Label text="Eind" />
-    <ComboBox>
+    <ComboBox fx:id="endComboBox" />
 
-    </ComboBox>
-  <Label fx:id="testText" text="ROUTE" />
-  <Button onAction="#onRouteInfoButtonClick" text="Zoek" />
+    <Label fx:id="testText" text="ROUTE" />
+    <Button onAction="#onRouteInfoButtonClick" text="Zoek" />
 </VBox>

@@ -1,8 +1,12 @@
 package com.example.projectovapp;
 
 import javafx.collections.FXCollections;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -23,6 +27,9 @@ public class PlannerController {
 
     @FXML
     private Label testText;
+
+    @FXM
+    private Button backButton;
 
     @FXML
     public void initialize() {
@@ -48,6 +55,23 @@ public class PlannerController {
             testText.setText("Route van " + start + " naar " + end);
         } else {
             testText.setText("Selecteer een begin- en eindpunt.");
+        }
+    }
+
+    @FXML
+    private void onBackButtonClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(ApplicationOpen.class.getResource("open.fxml"));
+            loader.setResources(LanguageManager.getBundle());
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root, 1280, 720));
+            stage.show();
+
+            // Vangt fouten op om te voorkomen dat de applicatie crasht
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

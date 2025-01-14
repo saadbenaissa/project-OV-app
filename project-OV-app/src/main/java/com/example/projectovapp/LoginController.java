@@ -1,6 +1,8 @@
 package com.example.projectovapp;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -12,6 +14,7 @@ import javafx.stage.Stage;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 public class LoginController {
 
@@ -30,21 +33,28 @@ public class LoginController {
     @FXML
     private Button backButton;
 
+    private ResourceBundle bundle;
+
     @FXML
-    private void onLoginButtonClick() {
+    public void initialize() {
+        bundle = LanguageManager.getBundle();
+    }
+
+    @FXML
+    private void onLoginButtonClick(ActionEvent event) {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
         if (username.isEmpty() || password.isEmpty()) {
-            statusLabel.setText("Vul alle velden in.");
+            statusLabel.setText(bundle.getString("status.empty_fields"));
             return;
         }
 
         if (validateLogin(username, password)) {
-            statusLabel.setText("Inloggen succesvol!");
-            openDashboard();
+            statusLabel.setText(bundle.getString("login.status.success"));
+            openDashboard(event);
         } else {
-            statusLabel.setText("Ongeldige inloggegevens.");
+            statusLabel.setText(bundle.getString("login.status.invalid"));
         }
     }
 
@@ -75,38 +85,42 @@ public class LoginController {
             }
         } catch (IOException e) {
             e.printStackTrace();
-            statusLabel.setText("Er is een fout opgetreden bij het lezen van de gegevens.");
+            statusLabel.setText(bundle.getString("error.file_not_found"));
         }
         return false; // Geen match gevonden
     }
 
-    private void openDashboard() {
+    private void openDashboard(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/projectovapp/route.fxml"));
+            FXMLLoader loader = new FXMLLoader(ApplicationOpen.class.getResource("route.fxml"));
+            loader.setResources(LanguageManager.getBundle());
             Parent root = loader.load();
 
-            Stage stage = (Stage) loginButton.getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root, 1280, 720));
             stage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
-            statusLabel.setText("Er is een fout opgetreden bij het openen van het dashboard.");
+            statusLabel.setText(bundle.getString("error.scene_load"));
         }
     }
 
     @FXML
-    private void onBackButtonClick() {
+    private void onBackButtonClick(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/projectovapp/open.fxml"));
+            FXMLLoader loader = new FXMLLoader(ApplicationOpen.class.getResource("open.fxml"));
+            loader.setResources(LanguageManager.getBundle());
             Parent root = loader.load();
 
-            Stage stage = (Stage) backButton.getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root, 1280, 720));
             stage.show();
+
+            // Vangt fouten op om te voorkomen dat de applicatie crasht
         } catch (IOException e) {
             e.printStackTrace();
+            statusLabel.setText(bundle.getString("error.scene_back"));
         }
     }
 }

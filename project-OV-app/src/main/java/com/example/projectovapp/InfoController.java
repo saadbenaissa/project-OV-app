@@ -1,6 +1,8 @@
 package com.example.projectovapp;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -8,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.BufferedWriter;
@@ -17,6 +20,7 @@ import java.io.IOException;
 
 public class InfoController {
 
+    public ImageView routeImage;
     @FXML
     private Label beginStationLabel;
 
@@ -32,22 +36,19 @@ public class InfoController {
     }
 
     @FXML
-    // Als je op de terugknop klikt ga je naar open.fxml, oftewel de hoofdpagina.
-    // Met een try catch vangt het eventuele errors op en behandelt deze.
-    private void onBackButtonClick() {
+    private void onBackButtonClick(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/projectovapp/open.fxml"));
+            FXMLLoader loader = new FXMLLoader(ApplicationOpen.class.getResource("route.fxml"));
+            loader.setResources(LanguageManager.getBundle());
             Parent root = loader.load();
 
-            // Set the new scene
-            Stage stage = (Stage) backButton.getScene().getWindow();
-            stage.setScene(new Scene(root));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root, 1280, 720));
             stage.show();
 
-            //Als er een error ontstaat kun je een aangepaste melding weergeven aan de gebruiker.
+            // Vangt fouten op om te voorkomen dat de applicatie crasht
         } catch (IOException e) {
             e.printStackTrace();
-            showErrorDialog("An error occurred while loading the page. Please try again.");
         }
     }
 

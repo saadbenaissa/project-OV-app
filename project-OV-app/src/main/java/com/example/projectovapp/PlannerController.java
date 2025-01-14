@@ -28,7 +28,7 @@ public class PlannerController {
     @FXML
     private Label testText;
 
-    @FXM
+    @FXML
     private Button backButton;
 
     @FXML

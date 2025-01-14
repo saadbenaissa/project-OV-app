@@ -1,10 +1,12 @@
 package com.example.projectovapp;
 
 import javafx.collections.FXCollections;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -26,7 +28,7 @@ public class PlannerController {
     @FXML
     private Label testText;
 
-    @FXML
+    @FXM
     private Button backButton;
 
     @FXML

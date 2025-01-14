@@ -12,7 +12,7 @@
   </padding>
 
   <!-- Main Title -->
-  <Label fx:id="testText" alignment="CENTER" prefHeight="60.0" prefWidth="301.0" text="Route informatie" textAlignment="CENTER">
+  <Label fx:id="testText" alignment="CENTER" prefHeight="60.0" prefWidth="301.0" text="%routeinfo.welcome" textAlignment="CENTER">
     <font>
       <Font name="Arial" size="34.0" />
     </font>
@@ -27,12 +27,12 @@
 
       <!-- Begin Station Section -->
       <VBox alignment="CENTER" spacing="10.0">
-        <Label text="Begin Station:" textAlignment="LEFT">
+        <Label text="%routeinfo.beginstation" textAlignment="LEFT">
           <font>
             <Font name="System Bold" size="28.0" />
           </font>
         </Label>
-        <Label fx:id="beginStationLabel" text="Station Amsterdam Centraal" textAlignment="LEFT">
+        <Label fx:id="beginStationLabel" text="%routeinfo.beginstation-label" textAlignment="LEFT">
           <font>
             <Font size="16.0" />
           </font>
@@ -41,12 +41,12 @@
 
       <!-- End Station Section -->
       <VBox alignment="CENTER" spacing="10.0">
-        <Label text="Eind Station:" textAlignment="LEFT">
+        <Label text="%routeinfo.endstation" textAlignment="LEFT">
           <font>
             <Font name="System Bold" size="28.0" />
           </font>
         </Label>
-        <Label fx:id="endStationLabel" text="Station Utrecht Centraal" textAlignment="LEFT">
+        <Label fx:id="endStationLabel" text="%routeinfo.endstation-label" textAlignment="LEFT">
           <font>
             <Font size="16.0" />
           </font>
@@ -63,13 +63,11 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
       </padding>
       <ImageView fx:id="routeImage" fitHeight="400.0" fitWidth="400.0" preserveRatio="true">
-        <image>
-          <Image url="@/AMS-UTR.jpg" />
-        </image>
+        <Image url="@/AMS-UTR.jpg"/>
       </ImageView>
     </VBox>
   </HBox>
 
   <!-- Back Button -->
-  <Button fx:id="backButton" onAction="#onBackButtonClick" text="Terug" />
+  <Button fx:id="backButton" onAction="#onBackButtonClick" text="%back-button" />
 </VBox>

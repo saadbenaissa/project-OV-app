@@ -1,6 +1,8 @@
 package com.example.projectovapp;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -13,6 +15,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class RegisterController {
 
@@ -37,6 +41,13 @@ public class RegisterController {
     @FXML
     private Button backButton;  // Terug knop
 
+    private ResourceBundle bundle;
+
+    @FXML
+    public void initialize() {
+        bundle = LanguageManager.getBundle();
+    }
+
     // Registratie
     @FXML
     private void onRegistrationButtonClick() {
@@ -46,9 +57,9 @@ public class RegisterController {
         String password = passwordField.getText();
 
         if (fullname.isEmpty() || mail.isEmpty() || username.isEmpty() || password.isEmpty()) {
-            statusLabel.setText("Vul alle velden in.");
+            statusLabel.setText(bundle.getString("status.empty_fields"));
         } else {
-            statusLabel.setText("Registratie succesvol!");
+            statusLabel.setText(bundle.getString("registration.status.success"));
             saveRegistrationData(fullname, mail, username, password);
         }
     }
@@ -77,26 +88,25 @@ public class RegisterController {
 
         } catch (IOException e) {
             e.printStackTrace();
-            statusLabel.setText("Er is een fout opgetreden bij het opslaan van de gegevens.");
+            statusLabel.setText(bundle.getString("error.save_userdata"));
         }
     }
 
     @FXML
-    // Als je op de terugknop klikt ga je naar open.fxml
-
-    private void onBackButtonClick() {
+    private void onBackButtonClick(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/projectovapp/open.fxml"));
+            FXMLLoader loader = new FXMLLoader(ApplicationOpen.class.getResource("open.fxml"));
+            loader.setResources(LanguageManager.getBundle());
             Parent root = loader.load();
 
-            Stage stage = (Stage) backButton.getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root, 1280, 720));
             stage.show();
 
             // Vangt fouten op om te voorkomen dat de applicatie crasht
         } catch (IOException e) {
             e.printStackTrace();
+            statusLabel.setText(bundle.getString("error.scene_back"));
         }
     }
 }
